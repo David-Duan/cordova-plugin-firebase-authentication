@@ -59,6 +59,11 @@ module.exports = {
             exec(resolve, reject, PLUGIN_NAME, "signInWithVerificationId", [verificationId, code]);
         });
     },
+    signInWithCustomToken: function(token) {
+        return new Promise(function(resolve, reject) {
+            exec(resolve, reject, PLUGIN_NAME, "signInWithCustomToken", [token]);
+        });
+    },
     signOut: function() {
         return new Promise(function(resolve, reject) {
             exec(resolve, reject, PLUGIN_NAME, "signOut", []);
