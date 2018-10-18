@@ -12,6 +12,7 @@
 - (void)signInWithFacebook:(CDVInvokedUrlCommand*)command;
 - (void)signInWithTwitter:(CDVInvokedUrlCommand*)command;
 - (void)signInWithVerificationId:(CDVInvokedUrlCommand*)command;
+- (void)signInWithCustomToken:(CDVInvokedUrlCommand*)command;
 - (void)verifyPhoneNumber:(CDVInvokedUrlCommand*)command;
 - (void)signOut:(CDVInvokedUrlCommand*)command;
 - (void)setLanguageCode:(CDVInvokedUrlCommand*)command;
