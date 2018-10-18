@@ -156,6 +156,16 @@
     }];
 }
 
+- (void)signInWithCustomToken:(CDVInvokedUrlCommand*)command {
+    NSString* token = [command.arguments objectAtIndex:0];
+
+    [[FIRAuth auth] signInWithCustomToken:token
+                                             completion:^(FIRAuthDataResult *result, NSError *error) {
+        [self.commandDelegate sendPluginResult:[self createAuthResult:result
+                                                            withError:error] callbackId:command.callbackId];
+    }];
+}
+
 - (void)verifyPhoneNumber:(CDVInvokedUrlCommand*)command {
     NSString* phoneNumber = [command.arguments objectAtIndex:0];
 
