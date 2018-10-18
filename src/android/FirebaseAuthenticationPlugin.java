@@ -148,6 +148,13 @@ public class FirebaseAuthenticationPlugin extends ReflectiveCordovaPlugin implem
         firebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener(cordova.getActivity(), this);
     }
+    
+    @CordovaMethod
+    private void signInWithCustomToken(String token, CallbackContext callbackContext) {
+        this.signinCallback = callbackContext;
+        firebaseAuth.signInWithCustomToken(token)
+            .addOnCompleteListener(cordova.getActivity(), this);
+    }
 
     @CordovaMethod
     private void signInWithVerificationId(String verificationId, String code, CallbackContext callbackContext) {
